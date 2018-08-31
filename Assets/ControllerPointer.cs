@@ -14,7 +14,6 @@ public class ControllerPointer : MonoBehaviour
 		beam = Instantiate(BeamPrefab);
 		beam.transform.SetParent(transform, false);
 
-		tracker = new GameObject("Tracker");
 		tracker.transform.SetParent(transform, false);
 	}
 
@@ -43,8 +42,6 @@ public class ControllerPointer : MonoBehaviour
 
 		if (pointedShip != null && SteamVR_Controller.Input((int) GetComponent<SteamVR_TrackedObject>().index).GetHairTriggerDown())
 		{
-			Debug.Log($"Picking up {pointedShip.gameObject.name}");
-
 			pickedUpShip = pointedShip;
 			pickedUpShip.ShowMovementRange();
 			tracker.transform.position = hit.transform.position;

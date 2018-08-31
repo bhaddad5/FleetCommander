@@ -16,14 +16,15 @@ public class ShipController : MonoBehaviour
 	void Start()
 	{
 		movementRangeDisplay = GameObject.Instantiate(MovementRangeDisplayPrefab);
-		movementRangeDisplay.transform.SetParent(transform, false);
+		movementRangeDisplay.SetActive(false);
 	}
 
 	public void ShowMovementRange()
 	{
 		DesiredPosTracker.SetActive(true);
 		movementRangeDisplay.SetActive(true);
-		movementRangeDisplay.transform.localScale = new Vector3(maxXZDist, maxYDist, maxXZDist);
+		movementRangeDisplay.transform.position = transform.position;
+		movementRangeDisplay.transform.localScale = new Vector3(maxXZDist, maxYDist, maxXZDist) * 2f;
 	}
 
 	public void HideMovementRange()
@@ -35,8 +36,17 @@ public class ShipController : MonoBehaviour
 	{
 		DesiredPosTracker.transform.eulerAngles = rot;
 
-		Vector3 vec = pos - transform.position;
-		Ray rayToDesiredPos = new Ray(transform.position, vec);
-		DesiredPosTracker.transform.position = rayToDesiredPos.GetPoint(Mathf.Min(Speed, vec.magnitude));
+		Vector3 xzVec = pos - transform.position;
+		xzVec.y = 0;
+		Ray xzRayToDesiredPos = new Ray(transform.position, xzVec);
+		Vector3 xzPos = xzRayToDesiredPos.GetPoint(Mathf.Min(maxXZDist, xzVec.magnitude));
+
+		Vector3 yVec = pos - transform.position;
+		yVec.x = 0;
+		yVec.z = 0;
+		Ray yRayToDesiredPos = new Ray(transform.position, yVec);
+		Vector3 yPos = yRayToDesiredPos.GetPoint(Mathf.Min(maxYDist, yVec.magnitude));
+
+		DesiredPosTracker.transform.position = new Vector3(xzPos.x, yPos.y, xzPos.z);
 	}
 }
