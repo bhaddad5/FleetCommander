@@ -10,7 +10,7 @@ public class ControllerPointer : MonoBehaviour
 	private SteamVR_Controller.Device device => SteamVR_Controller.Input((int)GetComponent<SteamVR_TrackedObject>().index);
 
 	private GameObject tracker;
-
+	private float trackedRot;
 	void Start()
 	{
 		beam = Instantiate(BeamPrefab);
@@ -41,14 +41,14 @@ public class ControllerPointer : MonoBehaviour
 
 		beam.transform.localScale = new Vector3(.01f, .01f, dist);
 
-		ShipController pointedShip = hit.transform?.GetComponent<ShipController>();
+		ShipController pointedShip = hit.transform?.GetComponentInParent<ShipController>();
 
 		if (pointedShip != null && device.GetHairTriggerDown())
 		{
 			pickedUpShip = pointedShip;
 			pickedUpShip.ShowMovementRange();
-			tracker.transform.position = hit.transform.position;
-			tracker.transform.eulerAngles = hit.transform.eulerAngles;
+			tracker.transform.position = pointedShip.transform.position;
+			trackedRot = pointedShip.transform.eulerAngles.y;
 		}
 	}
 
@@ -75,12 +75,14 @@ public class ControllerPointer : MonoBehaviour
 				var axisChange = axis - prevAxis;
 				prevAxis = axis;
 				tracker.transform.position += transform.forward * axisChange.y * .5f;
+
+				trackedRot += axisChange.x * -50f;
 			}
 			
 
 			tracker.transform.position = pickedUpShip.ConstrainDesiredPos(tracker.transform.position);
 
-			pickedUpShip.SetDesiredPos(tracker.transform.position, tracker.transform.eulerAngles);
+			pickedUpShip.SetDesiredPos(tracker.transform.position, new Vector3(0, trackedRot, 0));
 
 			
 		}
