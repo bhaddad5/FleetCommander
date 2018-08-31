@@ -7,6 +7,8 @@ public class ControllerPointer : MonoBehaviour
 	public GameObject BeamPrefab;
 	private GameObject beam;
 
+	private SteamVR_Controller.Device device => SteamVR_Controller.Input((int)GetComponent<SteamVR_TrackedObject>().index);
+
 	private GameObject tracker;
 
 	void Start()
@@ -14,6 +16,7 @@ public class ControllerPointer : MonoBehaviour
 		beam = Instantiate(BeamPrefab);
 		beam.transform.SetParent(transform, false);
 
+		tracker = new GameObject("Tracker");
 		tracker.transform.SetParent(transform, false);
 	}
 
@@ -40,7 +43,7 @@ public class ControllerPointer : MonoBehaviour
 
 		ShipController pointedShip = hit.transform?.GetComponent<ShipController>();
 
-		if (pointedShip != null && SteamVR_Controller.Input((int) GetComponent<SteamVR_TrackedObject>().index).GetHairTriggerDown())
+		if (pointedShip != null && device.GetHairTriggerDown())
 		{
 			pickedUpShip = pointedShip;
 			pickedUpShip.ShowMovementRange();
@@ -49,22 +52,37 @@ public class ControllerPointer : MonoBehaviour
 		}
 	}
 
+	Vector2 prevAxis = Vector2.zero;
 	private void HandlePickedUpShip()
 	{
 		beam.transform.localScale = new Vector3(0, 0, 0);
 
-		if (SteamVR_Controller.Input((int) GetComponent<SteamVR_TrackedObject>().index).GetHairTriggerUp())
+		if (device.GetHairTriggerUp())
 		{
-			Debug.Log("HIT!!!");
 			pickedUpShip.HideMovementRange();
 			pickedUpShip = null;
 		}
 		else
 		{
-			var axis = SteamVR_Controller.Input((int) GetComponent<SteamVR_TrackedObject>().index).GetAxis();
+			if (device.GetTouchDown(SteamVR_Controller.ButtonMask.Touchpad))
+			{
+				prevAxis = device.GetAxis();
+			}
+
+			if (device.GetTouch(SteamVR_Controller.ButtonMask.Touchpad))
+			{
+				var axis = device.GetAxis();
+				var axisChange = axis - prevAxis;
+				prevAxis = axis;
+				tracker.transform.position += transform.forward * axisChange.y * .5f;
+			}
 			
 
+			tracker.transform.position = pickedUpShip.ConstrainDesiredPos(tracker.transform.position);
+
 			pickedUpShip.SetDesiredPos(tracker.transform.position, tracker.transform.eulerAngles);
+
+			
 		}
 	}
 

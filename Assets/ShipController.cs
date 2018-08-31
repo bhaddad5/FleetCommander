@@ -36,6 +36,13 @@ public class ShipController : MonoBehaviour
 	{
 		DesiredPosTracker.transform.eulerAngles = rot;
 
+		
+
+		DesiredPosTracker.transform.position = pos;
+	}
+
+	public Vector3 ConstrainDesiredPos(Vector3 pos)
+	{
 		Vector3 xzVec = pos - transform.position;
 		xzVec.y = 0;
 		Ray xzRayToDesiredPos = new Ray(transform.position, xzVec);
@@ -47,6 +54,6 @@ public class ShipController : MonoBehaviour
 		Ray yRayToDesiredPos = new Ray(transform.position, yVec);
 		Vector3 yPos = yRayToDesiredPos.GetPoint(Mathf.Min(maxYDist, yVec.magnitude));
 
-		DesiredPosTracker.transform.position = new Vector3(xzPos.x, yPos.y, xzPos.z);
+		return new Vector3(xzPos.x, yPos.y, xzPos.z);
 	}
 }
