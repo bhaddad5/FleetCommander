@@ -1,0 +1,360 @@
+fileFormatVersion: 2
+guid: 17556b75e5a58e2478df8f65d9422e31
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: back below
+    100002: back below.target
+    100004: BODY
+    100006: body
+    100008: canopy
+    100010: falre2
+    100012: flare1
+    100014: flare3
+    100016: flare4
+    100018: FOOT Cent
+    100020: front
+    100022: front.target
+    100024: HEAD
+    100026: helmet
+    100028: Joint
+    100030: LEG
+    100032: Leg Center
+    100034: Light01
+    100036: Light01.target
+    100038: Light02
+    100040: Light02.target
+    100042: Light03
+    100044: luz01
+    100046: luz01.target
+    100048: luz02
+    100050: luz02.target
+    100052: Panavision
+    100054: Panavision.target
+    100056: PROBE
+    100058: Projecto02
+    100060: Projector
+    100062: r2 eye
+    100064: r2 head
+    100066: seat
+    100068: Sensor
+    100070: SENSOR 2
+    100072: SOLAR CELL
+    100074: tube01
+    100076: windows
+    100078: windows01
+    100080: WX Body
+    100082: WX canopy
+    100084: WX Detail
+    100086: WX DOOR 01
+    100088: WX DOOR 5
+    100090: WX engienI
+    100092: WX engienO
+    100094: WX etail I
+    100096: WX etail02
+    100098: WX gear f
+    100100: WX L g 02
+    100102: WX L g 1
+    100104: WX L g 2
+    100106: WX MOTOR
+    100108: WX nose
+    100110: WX Nozze O
+    100112: WX NozzelI
+    100114: //RootNode
+    400000: back below
+    400002: back below.target
+    400004: BODY
+    400006: body
+    400008: canopy
+    400010: falre2
+    400012: flare1
+    400014: flare3
+    400016: flare4
+    400018: FOOT Cent
+    400020: front
+    400022: front.target
+    400024: HEAD
+    400026: helmet
+    400028: Joint
+    400030: LEG
+    400032: Leg Center
+    400034: Light01
+    400036: Light01.target
+    400038: Light02
+    400040: Light02.target
+    400042: Light03
+    400044: luz01
+    400046: luz01.target
+    400048: luz02
+    400050: luz02.target
+    400052: Panavision
+    400054: Panavision.target
+    400056: PROBE
+    400058: Projecto02
+    400060: Projector
+    400062: r2 eye
+    400064: r2 head
+    400066: seat
+    400068: Sensor
+    400070: SENSOR 2
+    400072: SOLAR CELL
+    400074: tube01
+    400076: windows
+    400078: windows01
+    400080: WX Body
+    400082: WX canopy
+    400084: WX Detail
+    400086: WX DOOR 01
+    400088: WX DOOR 5
+    400090: WX engienI
+    400092: WX engienO
+    400094: WX etail I
+    400096: WX etail02
+    400098: WX gear f
+    400100: WX L g 02
+    400102: WX L g 1
+    400104: WX L g 2
+    400106: WX MOTOR
+    400108: WX nose
+    400110: WX Nozze O
+    400112: WX NozzelI
+    400114: //RootNode
+    2100000: A SHIP WHITE
+    2100002: GREY ALUMINUM
+    2100004: BLUE R2 D2
+    2100006: BLACK THRONE
+    2100008: WHITE GENERAL
+    2100010: BLACK LENS
+    2100012: BLACK TUBE
+    2100014: BLUE GLASS
+    2100016: METAL REFLEX
+    2100018: ORANGE XWING
+    2100020: XW SIDE
+    2100022: PHOTON
+    2100024: XW TOP
+    2100026: XW DOWN
+    2100028: XW BACK
+    2100030: WING TOP
+    2100032: WING BOTT
+    2100034: WING FRONT
+    2100036: WING BACK
+    2100038: ENGINE
+    2100040: INT ENG
+    2100042: LASER
+    2100044: BLUE PLASTIC
+    2100046: RED PLSTC
+    2100048: ENGINE 2
+    2100050: R2 EYE
+    2100052: CANOPY
+    2100054: ORANGE
+    2100056: PILOTBLACK MATTE
+    2100058: SKIN
+    2100060: WHITE SURFACE
+    2100062: BIB BUMP MAP
+    2100064: GREY MATTE
+    2100066: LT BLUE PLSTC
+    2100068: PUPIL
+    2100070: IRIS
+    2100072: EYE
+    2100074: REBEL HELMET GRY
+    2100076: RED DECOR
+    2100078: VISOR
+    2100080: CHROME
+    2300000: BODY
+    2300002: body
+    2300004: canopy
+    2300006: FOOT Cent
+    2300008: HEAD
+    2300010: helmet
+    2300012: Joint
+    2300014: LEG
+    2300016: Leg Center
+    2300018: PROBE
+    2300020: Projecto02
+    2300022: Projector
+    2300024: r2 eye
+    2300026: r2 head
+    2300028: seat
+    2300030: Sensor
+    2300032: SENSOR 2
+    2300034: SOLAR CELL
+    2300036: tube01
+    2300038: windows
+    2300040: windows01
+    2300042: WX Body
+    2300044: WX canopy
+    2300046: WX Detail
+    2300048: WX DOOR 01
+    2300050: WX DOOR 5
+    2300052: WX engienI
+    2300054: WX engienO
+    2300056: WX etail I
+    2300058: WX etail02
+    2300060: WX gear f
+    2300062: WX L g 02
+    2300064: WX L g 1
+    2300066: WX L g 2
+    2300068: WX MOTOR
+    2300070: WX nose
+    2300072: WX Nozze O
+    2300074: WX NozzelI
+    3300000: BODY
+    3300002: body
+    3300004: canopy
+    3300006: FOOT Cent
+    3300008: HEAD
+    3300010: helmet
+    3300012: Joint
+    3300014: LEG
+    3300016: Leg Center
+    3300018: PROBE
+    3300020: Projecto02
+    3300022: Projector
+    3300024: r2 eye
+    3300026: r2 head
+    3300028: seat
+    3300030: Sensor
+    3300032: SENSOR 2
+    3300034: SOLAR CELL
+    3300036: tube01
+    3300038: windows
+    3300040: windows01
+    3300042: WX Body
+    3300044: WX canopy
+    3300046: WX Detail
+    3300048: WX DOOR 01
+    3300050: WX DOOR 5
+    3300052: WX engienI
+    3300054: WX engienO
+    3300056: WX etail I
+    3300058: WX etail02
+    3300060: WX gear f
+    3300062: WX L g 02
+    3300064: WX L g 1
+    3300066: WX L g 2
+    3300068: WX MOTOR
+    3300070: WX nose
+    3300072: WX Nozze O
+    3300074: WX NozzelI
+    4300000: Joint
+    4300002: Leg Center
+    4300004: Projector
+    4300006: Sensor
+    4300008: HEAD
+    4300010: PROBE
+    4300012: BODY
+    4300014: SOLAR CELL
+    4300016: LEG
+    4300018: SENSOR 2
+    4300020: Projecto02
+    4300022: tube01
+    4300024: FOOT Cent
+    4300026: WX engienO
+    4300028: WX Nozze O
+    4300030: WX etail02
+    4300032: WX canopy
+    4300034: WX L g 1
+    4300036: WX L g 2
+    4300038: WX gear f
+    4300040: WX MOTOR
+    4300042: WX Detail
+    4300044: WX L g 02
+    4300046: WX DOOR 5
+    4300048: WX DOOR 01
+    4300050: WX Body
+    4300052: WX engienI
+    4300054: WX NozzelI
+    4300056: WX etail I
+    4300058: WX nose
+    4300060: r2 eye
+    4300062: canopy
+    4300064: windows
+    4300066: windows01
+    4300068: r2 head
+    4300070: helmet
+    4300072: body
+    4300074: seat
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.0001
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

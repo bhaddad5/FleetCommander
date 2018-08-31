@@ -92,6 +92,8 @@
     <Compile Include="Assets\SteamVR\Scripts\SteamVR_Utils.cs" />
     <None Include="Assets\SteamVR\Resources\SteamVR_Fade.shader" />
     <None Include="Assets\SteamVR\Resources\SteamVR_ClearAll.shader" />
+    <None Include="Assets\Ships\Tie Fighters\aquarius.txt" />
+    <None Include="Assets\Ships\X Wings\x wings\xwcredits.txt" />
     <None Include="Assets\SteamVR\Resources\SteamVR_SphericalProjection.shader" />
     <None Include="Assets\SteamVR\Resources\SteamVR_AlphaOut.shader" />
     <None Include="Assets\SteamVR\readme.txt" />

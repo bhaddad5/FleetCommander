@@ -61,6 +61,9 @@ public class ControllerPointer : MonoBehaviour
 		}
 		else
 		{
+			var axis = SteamVR_Controller.Input((int) GetComponent<SteamVR_TrackedObject>().index).GetAxis();
+			
+
 			pickedUpShip.SetDesiredPos(tracker.transform.position, tracker.transform.eulerAngles);
 		}
 	}
