@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Assets\ControllerPointer.cs" />
     <Compile Include="Assets\ShipController.cs" />
+    <Compile Include="Assets\ShipsTracker.cs" />
     <Compile Include="Assets\SteamVR\Plugins\openvr_api.cs" />
     <Compile Include="Assets\SteamVR\Scripts\SteamVR.cs" />
     <Compile Include="Assets\SteamVR\Scripts\SteamVR_Camera.cs" />

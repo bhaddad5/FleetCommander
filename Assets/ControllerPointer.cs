@@ -25,7 +25,13 @@ public class ControllerPointer : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		if(pickedUpShip == null)
+		if (ShipsTracker.Playing)
+		{
+			beam.transform.localScale = Vector3.zero;
+			return;
+		}
+
+		if (pickedUpShip == null)
 			PointAtShips();
 		else HandlePickedUpShip();
 	}
@@ -50,6 +56,9 @@ public class ControllerPointer : MonoBehaviour
 			tracker.transform.position = pointedShip.transform.position;
 			trackedRot = pointedShip.transform.eulerAngles.y;
 		}
+
+		if (device.GetPressDown(SteamVR_Controller.ButtonMask.ApplicationMenu))
+			ShipsTracker.Playing = true;
 	}
 
 	Vector2 prevAxis = Vector2.zero;

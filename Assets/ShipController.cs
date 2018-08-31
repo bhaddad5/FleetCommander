@@ -8,7 +8,8 @@ public class ShipController : MonoBehaviour
 	private float maxXZDist => Speed;
 	private float maxYDist => Speed / 3f;
 
-	public GameObject DesiredPosTracker;
+	public GameObject DesiredPosTrackerPrefab;
+	private GameObject desiredPosTracker;
 
 	public GameObject MovementRangeDisplayPrefab;
 	private GameObject movementRangeDisplay;
@@ -17,11 +18,14 @@ public class ShipController : MonoBehaviour
 	{
 		movementRangeDisplay = GameObject.Instantiate(MovementRangeDisplayPrefab);
 		movementRangeDisplay.SetActive(false);
+
+		desiredPosTracker = GameObject.Instantiate(DesiredPosTrackerPrefab);
+		desiredPosTracker.SetActive(false);
 	}
 
 	public void ShowMovementRange()
 	{
-		DesiredPosTracker.SetActive(true);
+		desiredPosTracker.SetActive(true);
 		movementRangeDisplay.SetActive(true);
 		movementRangeDisplay.transform.position = transform.position;
 		movementRangeDisplay.transform.localScale = new Vector3(maxXZDist, maxYDist, maxXZDist) * 2f;
@@ -32,13 +36,25 @@ public class ShipController : MonoBehaviour
 		movementRangeDisplay.SetActive(false);
 	}
 
+	private Vector3 startPos;
+	private Vector3 startRot;
+	public void MoveShip(float percentage)
+	{
+		if (desiredPosTracker.activeInHierarchy)
+		{
+			startPos = transform.position;
+			startRot = transform.eulerAngles;
+			desiredPosTracker.SetActive(false);
+		}
+		
+		transform.position = Vector3.Lerp(startPos, desiredPosTracker.transform.position, percentage);
+		transform.eulerAngles = Vector3.Lerp(startRot, desiredPosTracker.transform.eulerAngles, percentage);
+	}
+
 	public void SetDesiredPos(Vector3 pos, Vector3 rot)
 	{
-		DesiredPosTracker.transform.eulerAngles = rot;
-
-		
-
-		DesiredPosTracker.transform.position = pos;
+		desiredPosTracker.transform.eulerAngles = rot;
+		desiredPosTracker.transform.position = pos;
 	}
 
 	public Vector3 ConstrainDesiredPos(Vector3 pos)
